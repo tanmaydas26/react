@@ -40,7 +40,7 @@ function App() {
       <div className="w-full">
         
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
-          <h1 className="font-semibold text-center text-lg py-2">Currency Convert ( {from.toUpperCase()} to { to.toUpperCase() } )</h1>
+          <h1 className="font-semibold text-center text-xl py-2">Currency Convert ( {from.toUpperCase()} to { to.toUpperCase() } )</h1>
           <form
             onSubmit={(e) => {
               e.preventDefault();
