@@ -9,15 +9,6 @@ function App() {
   const [to, setTo] = useState('inr');
   const [convertedAmount, setConvertedAmount] = useState(0);
 
-  
-  const handleChangeFrom = (event) => {
-    setFrom(event.target.value);
-  };
-
-  const handleChangeTo = (event) => {
-    setTo(event.target.value);
-  };
-
   const currencyInfo = useCurrencyInfo(from);
   const options = Object.keys(currencyInfo);
   const swap = () => {
@@ -53,7 +44,7 @@ function App() {
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setFrom(currency)}
                 onAmountChange={(amount) => setAmount(amount)}
-                onChange={handleChangeFrom}
+                onChange={(e)=>setFrom(e.target.value)}
               />
             </div>
             <div className="relative w-full h-0.5">
@@ -66,7 +57,7 @@ function App() {
               </button>
             </div>
             <div className="w-full mt-1 mb-4">
-              <InputBox label="To" amount={convertedAmount} currencyOptions={options} onCurrencyChange={(currency)=> setTo(currency)} onChange={handleChangeTo} amountDisable />
+              <InputBox label="To" amount={convertedAmount} currencyOptions={options} onCurrencyChange={(currency)=> setTo(currency)} onChange={(e)=>setTo(e.target.value)} amountDisable />
             </div>
             <button
               type="submit"
